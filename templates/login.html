@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+    {% block title %}Login{% endblock %}
+
+    {% block content %}
+        <div class="container center-container">
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <h4>Iniciar Sesion</h4>
+                    <form method="post">
+                        {{ form.hidden_tag() }}
+                        {% from "macros/macroLogin.html" import formulario_login %}
+                        {{ formulario_login(form.id) }}
+                        {{ formulario_login(form.email) }}
+                        <p>{{ form.submit() }}</p>
+                    </form>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for mensaje in messages %}
+                                <div class="alert alert-{{mensaje[0]}}">{{ mensaje[1] }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+        
+    {% endblock %}

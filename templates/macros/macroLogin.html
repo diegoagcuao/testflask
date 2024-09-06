@@ -1,0 +1,8 @@
+{% macro formulario_login(campo) %}
+<div class="form-group my-4">
+    {{ campo() }}
+    <div id="error-{{ campo.name }}" class="form-error text-danger text-center fw-bold fst-italic"></div>
+</div>
+{% endmacro %}
+
+

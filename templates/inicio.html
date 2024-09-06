@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Bienvenido{% endblock %}
+
+{% block content %}
+<div class="container center-container" style="border:1px solid black;">
+  <div class="row text-center">
+    <div class="col-sm-6">
+      <img src="{{ url_for('static', filename='img/vader.png') }}" class="img-fluid">
+    </div>
+    <div class="col-sm-6 center-vertical">
+      <h5>Bienvenido al sistema x</h5><br/>
+      <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Ingresar</a>
+    </div>
+  </div>
+</div>
+{% include 'modal_login.html' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/login.js') }}" defer></script>
+{% endblock %}
+
+

@@ -1,0 +1,27 @@
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid h-100">
+          <div class="row h-100">
+            <div class="col-7 d-none d-lg-block"></div>
+            <div class="col-12 col-lg-5 mx-auto d-flex flex-column justify-content-center cntlogin">
+              <form id="loginForm" method="post" class="w-100" data-login-url="{{ url_for('login') }}" data-dashboard-url="{{ url_for('dashboard') }}">
+                {{ form.hidden_tag() }}
+                {% from "macros/macroLogin.html" import formulario_login %}
+                {{ formulario_login(form.email) }}
+                {{ formulario_login(form.contrasena) }}
+                <div class="text-center">
+                    {{ form.submit() }}
+                </div>
+              </form>
+              <div id="messageContainer" class="my-4 text-center"></div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR [X]</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
