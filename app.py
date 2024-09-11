@@ -8,4 +8,4 @@ from routes import init_app
 init_app(app)
 
 if __name__ == "__main__":
-    app.run(host=Config.HOST,port=Config.PORT,debug=Config.DEBUG)
+    app.run(host="0.0.0.0", port=80)
