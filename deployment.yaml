@@ -16,7 +16,7 @@ spec:
       - name: testflask
         image: acrtestflask.azurecr.io/testflask:latest
         ports:
-        - containerPort: 5000
+        - containerPort: 80   # Cambiado de 5000 a 80 para coincidir con la configuración de Flask
 ---
 apiVersion: v1
 kind: Service
@@ -26,6 +26,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: 80           # Cambiado de 5000 a 80 para coincidir con el contenedor
   selector:
     app: testflask
